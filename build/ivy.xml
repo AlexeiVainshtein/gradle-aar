@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+  <info organisation="org.jfrog.example.android" module="gradle-android-aar" revision="1.0-SNAPSHOT" status="integration" publication="20151207184648">
+    <description/>
+  </info>
+  <configurations>
+    <conf name="_debugCompile" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,debugCompile,debugProvided,provided"/>
+    <conf name="_debugPublish" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,debugCompile,debugPublish,publish"/>
+    <conf name="_debugTestCompile" visibility="public" description="## Internal use, do not manually configure ##" extends="_debugCompile,androidTestCompile,androidTestProvided"/>
+    <conf name="_debugTestPublish" visibility="public" description="## Internal use, do not manually configure ##" extends="_debugCompile,_debugPublish,androidTestCompile,androidTestPublish"/>
+    <conf name="_releaseCompile" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,provided,releaseCompile,releaseProvided"/>
+    <conf name="_releasePublish" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,publish,releaseCompile,releasePublish"/>
+    <conf name="androidTestCompile" visibility="private" description="Classpath for compiling the androidTest sources."/>
+    <conf name="androidTestProvided" visibility="private" description="Classpath for only compiling the androidTest sources."/>
+    <conf name="androidTestPublish" visibility="private" description="Classpath only used for publishing."/>
+    <conf name="archives" visibility="public" description="Configuration for archive artifacts."/>
+    <conf name="compile" visibility="private" description="Classpath for compiling the main sources."/>
+    <conf name="debug" visibility="public" description="Published Configuration for Variant debug" extends="compile,debugCompile,debugPublish,publish"/>
+    <conf name="debugCompile" visibility="private" description="Classpath for compiling the debug sources."/>
+    <conf name="debugProvided" visibility="private" description="Classpath for only compiling the debug sources."/>
+    <conf name="debugPublish" visibility="private" description="Classpath only used for publishing."/>
+    <conf name="default" visibility="public" description="Configuration for default artifacts." extends="_releasePublish"/>
+    <conf name="provided" visibility="private" description="Classpath for only compiling the main sources."/>
+    <conf name="publish" visibility="private" description="Classpath only used for publishing."/>
+    <conf name="published" visibility="public"/>
+    <conf name="release" visibility="public" description="Published Configuration for Variant release" extends="compile,publish,releaseCompile,releasePublish"/>
+    <conf name="releaseCompile" visibility="private" description="Classpath for compiling the release sources."/>
+    <conf name="releaseProvided" visibility="private" description="Classpath for only compiling the release sources."/>
+    <conf name="releasePublish" visibility="private" description="Classpath only used for publishing."/>
+  </configurations>
+  <publications>
+    <artifact name="gradle-android-aar" type="jar" ext="jar" conf="archives,published" m:classifier="sources"/>
+    <artifact name="gradle-android-aar" type="aar" ext="aar" conf="archives,default"/>
+  </publications>
+  <dependencies>
+    <dependency org="joda-time" name="joda-time" rev="2.3" conf="compile-&gt;default"/>
+  </dependencies>
+</ivy-module>

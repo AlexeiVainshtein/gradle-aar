@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="C:\Work\pe\project-examples\gradle-examples\gradle-android-aar\src\main\res" >
+            <file
+                name="hello_layout"
+                path="C:\Work\pe\project-examples\gradle-examples\gradle-android-aar\src\main\res\layout\hello_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="C:\Work\pe\project-examples\gradle-examples\gradle-android-aar\src\main\res\values\strings.xml"
+                qualifiers="" >
+                <string name="app_name" >Android Gradle
+                </string>
+            </file>
+        </source>
+        <source path="C:\Work\pe\project-examples\gradle-examples\gradle-android-aar\build\res\rs\release" />
+        <source path="C:\Work\pe\project-examples\gradle-examples\gradle-android-aar\build\res\generated\release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="C:\Work\pe\project-examples\gradle-examples\gradle-android-aar\src\release\res" />
+    </dataSet>
+
+</merger>
